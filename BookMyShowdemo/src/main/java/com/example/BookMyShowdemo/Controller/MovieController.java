@@ -16,19 +16,19 @@ public class MovieController {
     MovieServiceImpl movieService;
 
     @PostMapping("/add")
-    public MovieResponseDto addMovie(@RequestBody Moviedto moviedto){
+    public MovieResponseDto addMovie(@RequestBody(required = true) Moviedto moviedto){
         MovieResponseDto movieResponseDto=movieService.addMovie(moviedto);
         return movieResponseDto;
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteMovie(@PathVariable int id){
+    public ResponseEntity<String> deleteMovie(@PathVariable(required = true) int id){
         movieService.deleteMovie(id);
         return new ResponseEntity("Movie successfully deleted", HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/get/{id}")
-    public MovieResponseDto getMovie(@PathVariable int id){
+    public MovieResponseDto getMovie(@PathVariable(required = true) int id){
         return  movieService.getMovie(id);
     }
 }

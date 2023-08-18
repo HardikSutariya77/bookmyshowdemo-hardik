@@ -12,5 +12,5 @@ import java.time.LocalDate;
 public class MovieResponseDto {
     private int id;
     private String name;
-    private LocalDate releasedate;
+    private LocalDate releaseDate;
 }

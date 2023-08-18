@@ -15,13 +15,13 @@ public class UserController {
     UserServiceImpl userService;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addUSer(@RequestBody UserDto userdto){
+    public ResponseEntity<String> addUSer(@RequestBody(required = true) UserDto userdto){
         userService.addUser(userdto);
         return new ResponseEntity("User added Successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")
-    public UserResponseDto getUser(@PathVariable int id){
+    public UserResponseDto getUser(@RequestParam(required = true) int id ){
 
         return userService.getUser(id);
     }

@@ -14,12 +14,12 @@ public class TicketController {
     TicketServiceImpl ticketService;
 
     @PostMapping("/add")
-    public TicketResponseDto bookTicket(@RequestBody BookTicketRequestDto bookTicketRequestDto){
+    public TicketResponseDto bookTicket(@RequestBody(required = true) BookTicketRequestDto bookTicketRequestDto){
         return ticketService.bookTicket(bookTicketRequestDto);
     }
 
     @GetMapping("/get/{id}")
-    public TicketResponseDto getTicket(@PathVariable int id){
+    public TicketResponseDto getTicket(@PathVariable(required = true) int id){
         return ticketService.getTicket(id);
     }
 }

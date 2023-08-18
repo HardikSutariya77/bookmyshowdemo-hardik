@@ -9,10 +9,10 @@ import lombok.experimental.UtilityClass;
 public class MovieConverter {
 
     public static Movie dtoToEntity(Moviedto moviedto){
-        return Movie.builder().name(moviedto.getName()).releaseDate(moviedto.getRealease_date()).build();
+        return Movie.builder().name(moviedto.getName()).releaseDate(moviedto.getReleaseDate()).build();
     }
 
     public static MovieResponseDto entityToDto(Movie movie){
-        return  MovieResponseDto.builder().name(movie.getName()).id(movie.getId()).releasedate(movie.getReleaseDate()).build();
+        return  MovieResponseDto.builder().name(movie.getName()).id(movie.getId()).releaseDate(movie.getReleaseDate()).build();
     }
 }

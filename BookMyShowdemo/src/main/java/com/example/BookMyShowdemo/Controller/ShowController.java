@@ -14,12 +14,12 @@ public class ShowController {
     ShowServiceImpl showService;
 
     @PostMapping("/add")
-    public ShowResponseDto addShow(@RequestBody Showdto showdto){
+    public ShowResponseDto addShow(@RequestBody(required = true) Showdto showdto){
         return showService.addShow(showdto);
     }
 
     @GetMapping("/get/{id}")
-    public ShowResponseDto getShow(@PathVariable int id){
+    public ShowResponseDto getShow(@PathVariable(required = true) int id){
         return showService.getShow(id);
     }
 }

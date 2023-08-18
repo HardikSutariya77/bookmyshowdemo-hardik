@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,6 +20,7 @@ public class ShowSeat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
 
     private String seatNo;
 

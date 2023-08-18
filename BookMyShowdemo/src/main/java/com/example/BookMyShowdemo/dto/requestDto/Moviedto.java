@@ -11,5 +11,5 @@ import java.time.LocalDate;
 @Builder
 public class Moviedto {
     private String name;
-    private LocalDate realease_date;
+    private LocalDate releaseDate;
 }

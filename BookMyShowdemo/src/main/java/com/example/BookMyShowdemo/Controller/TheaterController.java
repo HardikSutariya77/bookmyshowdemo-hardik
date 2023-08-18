@@ -14,12 +14,12 @@ public class TheaterController {
     TheaterServiceImpl theaterService;
 
     @PostMapping("/add")
-    public TheaterResponseDto addTheater(@RequestBody Theaterdto theaterdto){
+    public TheaterResponseDto addTheater(@RequestBody(required = true) Theaterdto theaterdto){
         return theaterService.addTheatre(theaterdto);
     }
 
     @GetMapping("/get/{id}")
-    public TheaterResponseDto getTheatre(@PathVariable int id){
+    public TheaterResponseDto getTheatre(@PathVariable(required = true) int id){
         return theaterService.getTheatre(id);
     }
 }
